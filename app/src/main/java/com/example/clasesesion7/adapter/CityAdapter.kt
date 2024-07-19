@@ -5,12 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageButton
 import android.widget.TextView
 import com.example.clasesesion7.R
 import online.jadg13.clase7.entities.City
+import java.text.DecimalFormat
 
-class CityAdapter(private val context: Context, private var cityList: List<City>): BaseAdapter() {
-    override fun getCount(): Int {
+class CityAdapter(private val context: Context, private var cityList: List<City>,
+    private val onEditclick: (City) -> Unit,
+    private val onDeleteclick: (City) -> Unit): BaseAdapter() {
+        override fun getCount(): Int {
         return cityList.size
     }
 
@@ -28,7 +32,15 @@ class CityAdapter(private val context: Context, private var cityList: List<City>
 
         view.findViewById<TextView>(R.id.tvNameCity).text = city.name
         view.findViewById<TextView>(R.id.tvDescriptionCity).text = city.description
-        view.findViewById<TextView>(R.id.tvPopulationCity).text = city.population.toString()
+        val formatter = DecimalFormat("#,###,###")
+        view.findViewById<TextView>(R.id.tvPopulationCity).text = formatter.format(city.population)
+
+        val btnEdit= view.findViewById<ImageButton>(R.id.btnEdit)
+        val btnDelete= view.findViewById<ImageButton>(R.id.btnDelete)
+
+        btnEdit.setOnClickListener{ onEditclick(city)}
+        btnDelete.setOnClickListener{onDeleteclick(city)}
+
         return  view
     }
 

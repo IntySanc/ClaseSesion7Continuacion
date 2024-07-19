@@ -13,10 +13,25 @@
         <action
             android:id="@+id/go_NewCityFragment"
             app:destination="@id/newCityFragment" />
+        <action
+            android:id="@+id/go_EditCityFragment"
+            app:destination="@id/editCityFragment" />
     </fragment>
     <fragment
         android:id="@+id/newCityFragment"
         android:name="com.example.clasesesion7.NewCityFragment"
         android:label="fragment_new_city"
         tools:layout="@layout/fragment_new_city" />
+    <fragment
+        android:id="@+id/editCityFragment"
+        android:name="com.example.clasesesion7.EditCityFragment"
+        android:label="fragment_edit_city"
+        tools:layout="@layout/fragment_edit_city" >
+
+        <argument
+            android:name="city_id"
+            app:argType="integer"
+            />
+
+    </fragment>
 </navigation>

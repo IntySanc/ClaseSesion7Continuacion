@@ -5,10 +5,81 @@
     android:layout_height="match_parent"
     tools:context=".EditCityFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/llNewCity"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_margin="15dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvNewCity"
+            android:text="Editar Registro"
+            android:textColor="#0000FF"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvIdCity"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20sp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tfName"
+            android:hint="Nombre de la Ciudad"
+            android:textColorHint="#Ff8000"
+            android:layout_marginHorizontal="20dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tfDescription"
+            android:hint="Descripcion de la Ciudad"
+            android:textColorHint="#Ff8000"
+            android:layout_marginHorizontal="20dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tfPopulation"
+            android:hint="Poblacion de la Ciudad"
+            android:textColorHint="#Ff8000"
+            android:layout_marginHorizontal="20dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSave"
+            android:text="Guardar Registro"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="10dp"
+            />
+
+    </LinearLayout>
 
 </FrameLayout>
